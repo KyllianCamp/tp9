@@ -1,7 +1,5 @@
 #include "pile.h"
 
-
-
 void initPile( T_Pile * P)
 {
 }

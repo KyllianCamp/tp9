@@ -1,11 +1,11 @@
 #include "es.h" 	 
-#define MAX 10 //pile STATIQUE (limitée à MAX éléments)
 
+#define MAX 10 //pile STATIQUE (limitée à MAX éléments)
 
 typedef struct  
 {
 T_Elt Elts[MAX];  // stockage d'éléments de la case 0 à la case MAX-1
-int nbElts; 
+int nbElts;
 } T_Pile;
 
 

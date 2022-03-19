@@ -24,6 +24,8 @@ int main()
 T_File mafile;
 T_Pile mapile;
 int chx;
+int choix;
+T_Elt element;
 // int taille;
 //char chaine[20];
 
@@ -35,6 +37,16 @@ switch (chx)
 	case 1 :  
 		//testez toutes vos fonctions par un jeu de test de votre choix
 		//testPile(&mapile); //TP9 partie 1 : à ecrire 
+		initFile(&mafile); //On initalisz la file avec Tete et Queue à -1
+		printf("Combien d'élement voulez-vous ajouter a cette file?\n");
+		scanf("%d" , &choix);
+		for(int compteur=0; compteur<choix; compteur++)
+		{
+			printf("Quelle élement voulez vous ajouter? (Ceci est votre choix n°%d) \n" , compteur);
+			scanf("%d" , &element);
+			ajouter(&mafile ,&element);
+		}
+		afficherFile(&mafile);
 		break;
 	case 2 : //testez toutes vos fonctions par un jeu de test de votre choix
 		// testFile(&mafile); //TP9 partie 1 : à ecrire 
@@ -53,6 +65,7 @@ switch (chx)
 	}
 }while(chx!=0);
 
-printf("\nau plaisir de vous revoir ...\n");
+printf("\nAu plaisir de vous revoir ...\n");
+printf("\n Ceci est un travail de qualité fourni par M.Nassiri Achrafe et M.Campagne Kyllian !! \n");
 return 0;
 }
