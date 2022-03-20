@@ -37,7 +37,9 @@ switch (chx)
 	case 1 :  
 		//testez toutes vos fonctions par un jeu de test de votre choix
 		//testPile(&mapile); //TP9 partie 1 : à ecrire 
+
 		initFile(&mafile); //On initalisz la file avec Tete et Queue à -1
+
 		printf("Combien d'élement voulez-vous ajouter a cette file?\n");
 		scanf("%d" , &choix);
 		for(int compteur=0; compteur<choix; compteur++)
@@ -46,7 +48,19 @@ switch (chx)
 			scanf("%d" , &element);
 			ajouter(&mafile ,&element);
 		}
+
 		afficherFile(&mafile);
+
+		printf("\n");
+		printf("Combien d'élement voulez-vous retirer a cette file?\n");
+		scanf("%d" , &choix);
+		for(int compteur=0; compteur<choix; compteur++)
+		{
+			retirer(&mafile ,&element);
+		}
+
+		afficherFile(&mafile);
+
 		break;
 	case 2 : //testez toutes vos fonctions par un jeu de test de votre choix
 		// testFile(&mafile); //TP9 partie 1 : à ecrire 
@@ -66,6 +80,6 @@ switch (chx)
 }while(chx!=0);
 
 printf("\nAu plaisir de vous revoir ...\n");
-printf("\n Ceci est un travail de qualité fourni par M.Nassiri Achrafe et M.Campagne Kyllian !! \n");
+printf("\n Ceci est un travail de qualité fourni par M.Nassiri Achrafe et M.Campagne Kyllian !! \n\n");
 return 0;
 }

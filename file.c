@@ -108,7 +108,7 @@ void afficherFile(T_File *ptrF)
         }
         else
         {
-            for (int i=ptrF->Tete;i<=MAX;i++)
+            for (int i=ptrF->Tete+1;i<=MAX;i++)
             {
                 afficherElt(&ptrF->Elts[i]);
             }
