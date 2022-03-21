@@ -56,7 +56,7 @@ switch (chx)
 
 		afficherFile(&mafile);
 
-		printf("\n");
+		printf("\n\n");
 		printf("Combien d'élement voulez-vous retirer a cette file?\n");
 		scanf("%d" , &choix);
 		for(int compteur=0; compteur<choix; compteur++)
@@ -64,7 +64,9 @@ switch (chx)
 			retirer(&mafile ,&element);
 		}
 
+		printf("\n\n");
 		afficherFile(&mafile);
+		printf("\n\n");
 
 		printf("Combien d'élement voulez-vous ajouter a cette file?\n");
 		scanf("%d" , &choix);
@@ -93,7 +95,7 @@ switch (chx)
 		printf("\n");
 		c = filePleine(&mafile);
 		afficherFile(&mafile);
-		printf("\n\n%d\n",c);
+		printf("\n\n Le resultat de la fonction file pleine est : %d\n",c);
 
 		break;
 	case 2 : //testez toutes vos fonctions par un jeu de test de votre choix

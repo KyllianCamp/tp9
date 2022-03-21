@@ -16,6 +16,8 @@ int  retirer(T_File *ptrF,T_Elt *ptrE) //si pas vide, en tete de file
     }
     else
     {
+        ptrE = &ptrF->Elts[ptrF->Tete];
+        afficherElt(ptrE);
         if(ptrF->Tete == MAX)
         {
             ptrF->Tete = -1;
@@ -23,6 +25,7 @@ int  retirer(T_File *ptrF,T_Elt *ptrE) //si pas vide, en tete de file
         }
         else
         {
+            
             ptrF->Tete = ptrF->Tete+1;
             return 1;
         }
@@ -133,7 +136,7 @@ void afficherFile(T_File *ptrF)
         {
             for (int i=ptrF->Tete;i<=ptrF->Queue;i++)
             {
-                printf("%d %d",ptrF->Tete,ptrF->Queue);
+                // printf("%d %d",ptrF->Tete,ptrF->Queue);
                 afficherElt(&ptrF->Elts[i]);
             }
         }
