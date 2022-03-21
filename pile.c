@@ -2,32 +2,53 @@
 
 void initPile( T_Pile * P)
 {
+    P->nbElts = 0;
 }
 
 
 int pilepleine(const  T_Pile *P)
 {
-return 0;
+    if (P->nbElts >= MAX-1)
+    {
+        return 1;
+    }
+    return 0;
 }
 
 
 
 int pilevide(const  T_Pile *P)
 {
-return 1;
+    if (P->nbElts <= 0)
+    {
+        return 1;
+    }
+    return 0;
 }
 
 
 
 int empiler( T_Pile *P, T_Elt e) //renvoie 0 si pile pleine, sinon 1
 {
-return 0;
+    if (pilepleine(&P) != 1)
+    {
+        P->Elts[P->nbElts] = e;
+        P->nbElts++;
+        return 1;
+    }
+    return 0;
 }
 
 
 
 int depiler( T_Pile *P, T_Elt *pelt)  //renvoie 0 si pile vide, sinon 1
 {
+    if (pilevide(&P) != 1)
+    {
+        pelt = P->Elts[P->nbElts];
+        P->nbElts--;
+        return 1;
+    }
 return 0;
 }
 
@@ -35,19 +56,35 @@ return 0;
 
 T_Elt sommet(const  T_Pile *P)
 {
-return 0;
+    return P->Elts[P->nbElts];
 }
 
 
 
 int hauteur(const  T_Pile *P)
 {
-return 0;
+    return P->nbElts;
 }
 
 
 void afficherPile(  T_Pile *P)
 {
+    T_Pile PTempo;
+    initPile(&PTempo);
+    while (pilevide(&P) != 1)
+    {
+        afficherElt(P->Elts[P->nbElts]);
+        PTempo.Elts[PTempo.nbElts] = P->Elts[P->nbElts];
+        PTempo.nbElts++;
+        P->nbElts--;
+    }
+    while (pilevide(&PTempo) != 1)
+    {
+        P->Elts[P->nbElts] = PTempo.Elts[PTempo.nbElts];
+        PTempo.nbElts--;
+        P->nbElts++;
+    }
+    
 }
 
 
