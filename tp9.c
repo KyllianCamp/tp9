@@ -66,6 +66,17 @@ switch (chx)
 
 		afficherFile(&mafile);
 
+		printf("Combien d'élement voulez-vous ajouter a cette file?\n");
+		scanf("%d" , &choix);
+		for(int compteur=0; compteur<choix; compteur++)
+		{
+			printf("Quelle élement voulez vous ajouter? (Ceci est votre choix n°%d) \n" , compteur);
+			scanf("%d" , &element);
+			ajouter(&mafile ,&element);
+		}
+
+		afficherFile(&mafile);
+
 		printf("\nMaintenant nous allons tester pour vérifier si la file est vide ou non \nIl retournera 1 si elle est vide et 0 si elle est non vide \n");
 		initFile(&mafile);
 		int c = fileVide(&mafile);
