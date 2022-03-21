@@ -50,6 +50,10 @@ switch (chx)
 			ajouter(&mafile ,&element);
 		}
 
+		printf("Le premier élement de la file est ");
+		premier(&mafile);
+		printf("\n");
+
 		afficherFile(&mafile);
 
 		printf("\n");
@@ -75,6 +79,7 @@ switch (chx)
 			printf("%d",compteur);
 			ajouter(&mafile ,&valeur);
 		}
+		printf("\n");
 		c = filePleine(&mafile);
 		afficherFile(&mafile);
 		printf("\n\n%d\n",c);
