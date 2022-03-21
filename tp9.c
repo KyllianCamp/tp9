@@ -25,6 +25,7 @@ T_File mafile;
 T_Pile mapile;
 int chx;
 int choix;
+int valeur = 5;
 T_Elt element;
 // int taille;
 //char chaine[20];
@@ -61,6 +62,23 @@ switch (chx)
 
 		afficherFile(&mafile);
 
+		printf("Maintenant nous allons tester pour vérifier si la file est vide ou non \nIl retournera 1 si elle est vide et 0 si elle est non vide \n");
+		initFile(&mafile);
+		int c = fileVide(&mafile);
+		printf("%d\n",c);
+
+
+		printf("Maintenant nous allons tester pour vérifier si la file est pleine ou non \nIl retournera 1 si elle est pleine  et 0 si elle est non pleine \n");
+		initFile(&mafile);
+		for(int compteur=0; compteur<MAX; compteur++)
+		{
+			printf("%d",compteur);
+			ajouter(&mafile ,&valeur);
+		}
+		c = filePleine(&mafile);
+		afficherFile(&mafile);
+		printf("\n\n%d\n",c);
+
 		break;
 	case 2 : //testez toutes vos fonctions par un jeu de test de votre choix
 		// testFile(&mafile); //TP9 partie 1 : à ecrire 
@@ -80,6 +98,6 @@ switch (chx)
 }while(chx!=0);
 
 printf("\nAu plaisir de vous revoir ...\n");
-printf("\n Ceci est un travail de qualité fourni par M.Nassiri Achrafe et M.Campagne Kyllian !! \n\n");
+printf("\nCeci est un travail de qualité fourni par M.Nassiri Achrafe et M.Campagne Kyllian !! \n\n");
 return 0;
 }
