@@ -50,6 +50,10 @@ switch (chx)
 			ajouter(&mafile ,&element);
 		}
 
+		printf("Le premier élement de la file est ");
+		premier(&mafile);
+		printf("\n");
+
 		afficherFile(&mafile);
 
 		printf("\n");
@@ -62,7 +66,7 @@ switch (chx)
 
 		afficherFile(&mafile);
 
-		printf("Maintenant nous allons tester pour vérifier si la file est vide ou non \nIl retournera 1 si elle est vide et 0 si elle est non vide \n");
+		printf("\nMaintenant nous allons tester pour vérifier si la file est vide ou non \nIl retournera 1 si elle est vide et 0 si elle est non vide \n");
 		initFile(&mafile);
 		c = fileVide(&mafile);
 		printf("%d\n",c);
@@ -75,6 +79,7 @@ switch (chx)
 			printf("%d",compteur);
 			ajouter(&mafile ,&valeur);
 		}
+		printf("\n");
 		c = filePleine(&mafile);
 		afficherFile(&mafile);
 		printf("\n\n%d\n",c);
