@@ -4,7 +4,7 @@
 void initFile(T_File *ptrF) //mettre Tete et Queue à -1
 {
     ptrF->Tete = -1;
-    ptrF->Queue = -1;
+    ptrF->Queue = -1; 
 }
 
 int  retirer(T_File *ptrF,T_Elt *ptrE) //si pas vide, en tete de file
@@ -38,9 +38,13 @@ int ajouter(T_File *ptrF,T_Elt *ptrE) // si espace libre, ajout en queue
     }
     else
     {   
+        if(ptrF->Tete == -1)
+        {
+            ptrF->Tete = 0;
+        }
         if(ptrF->Queue == MAX)
         {
-            ptrF->Queue = -1;  
+            ptrF->Queue = 0;  
             ptrF->Elts[ptrF->Queue] = *ptrE;
             return 1;
         }
@@ -127,19 +131,22 @@ void afficherFile(T_File *ptrF)
         printf("Voici votre file :\n");
         if(ptrF->Tete<ptrF->Queue)
         {
-            for (int i=ptrF->Tete+1;i<=ptrF->Queue;i++)
+            for (int i=ptrF->Tete;i<=ptrF->Queue;i++)
             {
+                printf("%d %d",ptrF->Tete,ptrF->Queue);
                 afficherElt(&ptrF->Elts[i]);
             }
         }
         else
         {
-            for (int i=ptrF->Tete;i<MAX;i++)
+            for(int i=ptrF->Tete;i<MAX;i++)
             {
+                printf("%d %d",ptrF->Tete,ptrF->Queue);
                 afficherElt(&ptrF->Elts[i]);
             }
             for(int j=0;j<=ptrF->Queue;j++)
             {
+                printf("%d %d",ptrF->Tete,ptrF->Queue);
                 afficherElt(&ptrF->Elts[j]);
             }
 
