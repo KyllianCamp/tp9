@@ -62,7 +62,7 @@ switch (chx)
 
 		afficherFile(&mafile);
 
-		printf("Maintenant nous allons tester pour vérifier si la file est vide ou non \nIl retournera 1 si elle est vide et 0 si elle est non vide \n");
+		printf("\nMaintenant nous allons tester pour vérifier si la file est vide ou non \nIl retournera 1 si elle est vide et 0 si elle est non vide \n");
 		initFile(&mafile);
 		int c = fileVide(&mafile);
 		printf("%d\n",c);

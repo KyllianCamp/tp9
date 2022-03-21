@@ -118,7 +118,7 @@ void afficherFile(T_File *ptrF)
     {
         if(ptrF->Tete<ptrF->Queue)
         {
-            for (int i=ptrF->Tete+1;i<=ptrF->Queue;i++)
+            for (int i=ptrF->Tete;i<=ptrF->Queue;i++)
             {
                 afficherElt(&ptrF->Elts[i]);
             }
