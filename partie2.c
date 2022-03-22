@@ -9,7 +9,7 @@ void permut(T_Pile *P,char *chaine)
     {
         while(pileValide(P))
         {
-           if(noeudTerminal(P,(int)strlen(&chaine)))
+           if(noeudTerminal(P,(int)strlen(chaine)))
            {
                afficherSol(P, chaine);
 			break;
@@ -19,7 +19,7 @@ void permut(T_Pile *P,char *chaine)
                passerAuPremierFils(P,0);
            }
         }
-        while(!rechercheTerminee(P) && naPlusDeFrere(P,(int)strlen(&chaine)))
+        while(!rechercheTerminee(P) && naPlusDeFrere(P,(int)strlen(chaine)))
         {
             remonterAuPere(P,&E);
         }
@@ -34,11 +34,6 @@ void permut(T_Pile *P,char *chaine)
 
 int pileValide(T_Pile *adrP) 
 {
-<<<<<<< HEAD
-    
-    return 1;
-}
-=======
 	int compteur;
 	for (int i = 0; i < adrP->nbElts; i++)
     {
@@ -144,4 +139,3 @@ int factorielle(const char *chaine)
 // 	}
 // 	return 1;
 // }
->>>>>>> 05e4fb1ac86190f389c938bee1427202ed4795d5
