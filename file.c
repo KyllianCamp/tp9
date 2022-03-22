@@ -9,7 +9,7 @@ void initFile(T_File *ptrF) //mettre Tete et Queue à 0
 
 int  retirer(T_File *ptrF,T_Elt *ptrE) //si pas vide, en tete de file
 {
-    if(fileVide(ptrF)==1)
+    if(fileVide(ptrF))
     {
         printf("Attention la file sélectionné est vide \n");
         return 0;
@@ -32,7 +32,7 @@ int  retirer(T_File *ptrF,T_Elt *ptrE) //si pas vide, en tete de file
 
 int ajouter(T_File *ptrF,T_Elt *ptrE) // si espace libre, ajout en queue
 {  
-    if(filePleine(ptrF)==1)
+    if(filePleine(ptrF))
     {
         printf("Attention la file sélectionné est pleine \n");
         return 0;
