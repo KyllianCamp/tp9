@@ -3,14 +3,6 @@
 #include "pile.h"
 #include "file.h"
 
-#define passerAuPremierFils(adrP,E) empiler(adrP,E)
-#define remonterAuPere(adrP) depiler(adrP) 
-#define passerAuFrereSuivant(adrP,adrE)
-#define depiler(adrP,adrE),empiler(adrP,1+(*adrE)) 
-#define naPlusDeFrere(adrP,TailleChaine) sommet(adrP)==TailleChaine 
-#define noeudTerminal(adrP,TailleChaine) hauteurPile(adrP)==TailleChaine
-#define rechercheTerminee(adrP) pileVide(adrP)
-
 int menu()
 {
 
@@ -152,8 +144,8 @@ switch (chx)
 
 		break; 
 	case 3 : 
-		//scanf("%s",chaine); //une chaine de longueur <=MAX
-		//permut(&mapile,chaine); //TP9 partie 2: ecrire permut
+		scanf("%s",chaine); //une chaine de longueur <=MAX
+		permut(&mapile,chaine); //TP9 partie 2: ecrire permut
 		break;
 	case 4 : 
 		scanf("%d",&taille);//taille echiquier <=MAX
