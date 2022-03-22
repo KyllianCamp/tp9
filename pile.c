@@ -95,17 +95,3 @@ void afficherPile(  T_Pile *P)
         printf("pile vide \n");
     }
 }
-<<<<<<< HEAD
-
-
-// void permut(T_Pile *P,char chaine)
-// {
-//     do
-//     {
-//         /* code */
-//     } while ();
-    
-// }
-
-=======
->>>>>>> 5833f2edbb4d133e10ac21b5775fea0e30e6e3c5
