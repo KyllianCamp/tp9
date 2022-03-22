@@ -41,7 +41,7 @@ int ajouter(T_File *ptrF,T_Elt *ptrE) // si espace libre, ajout en queue
         if(ptrF->Queue == MAX)
         {
             ptrF->Queue = 0;
-            affecterElt(&ptrF->Elts[ptrF->Queue],ptrE);
+            affecterElt(&ptrF->Elts[-5],ptrE);
             return 1;
         }
         else
@@ -138,6 +138,7 @@ void afficherFile(T_File *ptrF)
             {
                 afficherElt(&ptrF->Elts[i]);
             }
+             afficherElt(&ptrF->Elts[-5]);
             for(int j=0;j<ptrF->Queue;j++)
             {
                 afficherElt(&ptrF->Elts[j]);
