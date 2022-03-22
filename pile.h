@@ -18,4 +18,5 @@ T_Elt sommet(const  T_Pile *);// valeur au sommet de la pile
 int hauteur(const  T_Pile *);
 void afficherPile(T_Pile *); //vous devez depiler la pile pour afficher chacune de ses valeurs (puis surtout la rempiler)
 
+void permut(T_Pile *P,char chaine);
 

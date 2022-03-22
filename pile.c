@@ -96,9 +96,12 @@ void afficherPile(  T_Pile *P)
 }
 
 
-
-
-
-
-
+void permut(T_Pile *P,char chaine);
+{
+    do
+    {
+        /* code */
+    } while ();
+    
+}
 
