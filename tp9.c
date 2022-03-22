@@ -145,7 +145,10 @@ switch (chx)
 
 		break; 
 	case 3 : 
+<<<<<<< HEAD
 		initPile(&mapile);
+=======
+>>>>>>> f75a065d7d9293ddb21834f3aa2c60ded0a730f8
 		printf("Choisissez la chaine de caracère\n");
 		scanf("%s",&chaine); //une chaine de longueur <=MAX
 		permut(&mapile,chaine); //TP9 partie 2: ecrire permut
