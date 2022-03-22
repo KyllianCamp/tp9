@@ -16,6 +16,7 @@ int  retirer(T_File *ptrF,T_Elt *ptrE) //si pas vide, en tete de file
     }
     else
     {
+        ptrE = &ptrF->Elts[ptrF->Tete];
         if(ptrF->Tete == MAX)
         {
             ptrF->Tete = 0;
