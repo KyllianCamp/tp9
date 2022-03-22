@@ -23,9 +23,9 @@ int main()
 {
 T_File mafile;
 T_Pile mapile;
-int chx;
+int chx, c;
 int choix;
-int valeur = 5;
+T_Elt valeur = 5;
 T_Elt element;
 // int taille;
 //char chaine[20];
@@ -63,7 +63,9 @@ switch (chx)
 			retirer(&mafile ,&element);
 		}
 
+		printf("\n\n");
 		afficherFile(&mafile);
+		printf("\n\n");
 
 		printf("Combien d'élement voulez-vous ajouter a cette file?\n");
 		scanf("%d" , &choix);
@@ -78,7 +80,7 @@ switch (chx)
 
 		printf("\nMaintenant nous allons tester pour vérifier si la file est vide ou non \nIl retournera 1 si elle est vide et 0 si elle est non vide \n");
 		initFile(&mafile);
-		int c = fileVide(&mafile);
+		c = fileVide(&mafile);
 		printf("%d\n",c);
 
 
@@ -92,12 +94,55 @@ switch (chx)
 		printf("\n");
 		c = filePleine(&mafile);
 		afficherFile(&mafile);
-		printf("\n\n%d\n",c);
+		printf("\n\n Le resultat de la fonction file pleine est : %d\n",c);
 
 		break;
 	case 2 : //testez toutes vos fonctions par un jeu de test de votre choix
 		// testFile(&mafile); //TP9 partie 1 : à ecrire 
-		
+		initPile(&mapile);
+		printf("Le nombre d'élément dans la pile est : \n");
+		printf("%d \n ", mapile.nbElts+1);
+		afficherPile(&mapile);
+
+		printf("Combien d'élement voulez-vous ajouter a cette pile?\n");
+		scanf("%d" , &choix);
+		for(int compteur=0; compteur<choix; compteur++)
+		{
+			printf("Quelle élement voulez vous ajouter? (Ceci est votre choix n°%d) \n" , compteur);
+			scanf("%d" , &element);
+			empiler(&mapile, element);
+		}
+
+		printf("ma pile vaut donc : \n");
+		afficherPile(&mapile);
+		printf("\n");
+
+		printf("la hauteur de la pile vaut : %d \n", hauteur(&mapile));
+		printf("La valeur au top vaut : %d \n", sommet(&mapile));
+
+		printf("Combien d'élement voulez-vous dépiler a cette pile?\n");
+		scanf("%d" , &choix);
+		for(int compteur=0; compteur<choix; compteur++)
+		{
+			depiler(&mapile, &element);
+		}
+
+		printf("\n ma pile vaut donc : \n");
+		afficherPile(&mapile);
+		printf("\n\n");
+
+		printf("Maintenant nous allons tester pour vérifier si la pile est pleine ou non \nIl retournera 1 si elle est pleine  et 0 si elle est non pleine \n");
+		initPile(&mapile);
+		for(int compteur=0; compteur<MAX; compteur++)
+		{
+			printf("%d",compteur);
+			empiler(&mapile, valeur);
+		}
+		printf("\n");
+		afficherPile(&mapile);
+		printf("\n\n");
+		printf("Le retour de la fonction pileplein est donc : %d \n", pilepleine(&mapile));
+
 		break; 
 	case 3 : 
 		//scanf("%s",chaine); //une chaine de longueur <=MAX
