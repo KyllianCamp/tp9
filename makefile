@@ -1,5 +1,5 @@
 c=gcc
-op=-Wall -Wextra
+op=-Wall -Wextra -g
 
 all : es.o pile.o file.o tp9.c 	partie2.c
 	$(c) $(op)  es.o file.o pile.o tp9.c partie2.c -o tp9

@@ -24,7 +24,7 @@ T_File mafile;
 T_Pile mapile;
 int chx, c;
 int choix;
-char chaine='\0';
+char chaine[20];
 T_Elt valeur = 5;
 T_Elt element;
 // int taille;
@@ -145,12 +145,10 @@ switch (chx)
 
 		break; 
 	case 3 : 
-<<<<<<< HEAD
 		initPile(&mapile);
-=======
->>>>>>> f75a065d7d9293ddb21834f3aa2c60ded0a730f8
 		printf("Choisissez la chaine de caracère\n");
-		scanf("%s",&chaine); //une chaine de longueur <=MAX
+		scanf("%s",chaine); //une chaine de longueur <=MAX
+		printf("\n Il y a %d permutation : \n\t", factorielle(chaine));
 		permut(&mapile,chaine); //TP9 partie 2: ecrire permut
 		break;
 	case 4 : 

@@ -8,7 +8,8 @@
 #define noeudTerminal(adrP,TailleChaine) hauteur(adrP)==TailleChaine
 #define rechercheTerminee(adrP) pilevide(adrP)
 
-void permut(T_Pile *P,char chaine);
+void permut(T_Pile *P,char *chaine);
 
-int pileValide(T_Pile *P);
-
+int pileValide(T_Pile *adrP);
+void afficherSol(T_Pile *P, char *chaine);
+int factorielle(const char *chaine);
