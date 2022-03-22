@@ -56,8 +56,7 @@ switch (chx)
 
 		afficherFile(&mafile);
 
-		printf("\n");
-		printf("Combien d'élement voulez-vous retirer a cette file?\n");
+		printf("\nCombien d'élement voulez-vous retirer a cette file?\n");
 		scanf("%d" , &choix);
 		for(int compteur=0; compteur<choix; compteur++)
 		{
