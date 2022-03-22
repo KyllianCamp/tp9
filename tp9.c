@@ -156,8 +156,8 @@ switch (chx)
 		//permut(&mapile,chaine); //TP9 partie 2: ecrire permut
 		break;
 	case 4 : 
-		//scanf("%d",&taille);//taille echiquier <=MAX
-		//echiquier(&mapile,taille); //TP9 partie 3: ecrire echiquier
+		scanf("%d",&taille);//taille echiquier <=MAX
+		echiquier(&mapile,taille); //TP9 partie 3: ecrire echiquier
 		break;
 
 
