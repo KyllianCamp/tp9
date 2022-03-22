@@ -34,7 +34,7 @@ int empiler( T_Pile *P, T_Elt e) //renvoie 0 si pile pleine, sinon 1
     if (pilepleine(P) != 1)
     {   
         P->nbElts++;
-        P->Elts[P->nbElts] = e;
+        affecterElt(&P->Elts[P->nbElts], &e);
         return 1;
     }
     return 0;
@@ -46,7 +46,7 @@ int depiler( T_Pile *P, T_Elt *pelt)  //renvoie 0 si pile vide, sinon 1
 {
     if (pilevide(P) != 1)
     {
-        pelt = &P->Elts[P->nbElts];
+        affecterElt(pelt, &P->Elts[P->nbElts]);
         P->nbElts--;
         afficherElt(pelt);
         return 1;
@@ -78,15 +78,16 @@ void afficherPile(  T_Pile *P)
         while (pilevide(P) != 1)
         {
             afficherElt(&P->Elts[P->nbElts]);
-            PTempo.Elts[PTempo.nbElts] = P->Elts[P->nbElts];
             PTempo.nbElts++;
+            affecterElt(&PTempo.Elts[PTempo.nbElts],&P->Elts[P->nbElts]);
             P->nbElts--;
         }
         while (pilevide(&PTempo) != 1)
         {
-            P->Elts[P->nbElts] = PTempo.Elts[PTempo.nbElts];
-            PTempo.nbElts--;
             P->nbElts++;
+            affecterElt(&P->Elts[P->nbElts], &PTempo.Elts[PTempo.nbElts]);
+            PTempo.nbElts--;
+            
         }
     }
     else
@@ -96,12 +97,12 @@ void afficherPile(  T_Pile *P)
 }
 
 
-void permut(T_Pile *P,char chaine);
-{
-    do
-    {
-        /* code */
-    } while ();
+// void permut(T_Pile *P,char chaine)
+// {
+//     do
+//     {
+//         /* code */
+//     } while ();
     
-}
+// }
 
