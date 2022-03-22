@@ -1,7 +1,7 @@
 // SDA1 TP 9 PILE de TAD (PILE d'ELEMENT)
 
-#include "pile.h"
 #include "file.h"
+#include "partie2.h"
 
 int menu()
 {
@@ -24,6 +24,7 @@ T_File mafile;
 T_Pile mapile;
 int chx, c;
 int choix;
+char chaine='\0';
 T_Elt valeur = 5;
 T_Elt element;
 // int taille;
@@ -144,8 +145,14 @@ switch (chx)
 
 		break; 
 	case 3 : 
+<<<<<<< HEAD
 		// scanf("%s",chaine); //une chaine de longueur <=MAX
 		// permut(&mapile,chaine); //TP9 partie 2: ecrire permut
+=======
+		printf("Choisissez la chaine de caracère\n");
+		scanf("%s",&chaine); //une chaine de longueur <=MAX
+		permut(&mapile,chaine); //TP9 partie 2: ecrire permut
+>>>>>>> 5833f2edbb4d133e10ac21b5775fea0e30e6e3c5
 		break;
 	case 4 : 
 		// scanf("%d",&taille);//taille echiquier <=MAX
