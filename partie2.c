@@ -4,7 +4,7 @@
 
 void permut(T_Pile *P,char *chaine)
 {
-    T_Elt E;
+    T_Elt elt;
     do
     {
         while(pileValide(P))
@@ -12,21 +12,21 @@ void permut(T_Pile *P,char *chaine)
            if(noeudTerminal(P,(int)strlen(chaine)))
            {
                afficherSol(P, chaine);
-			break;
+			   break;
            }
            else
            {
                passerAuPremierFils(P,0);
            }
         }
-        while(!rechercheTerminee(P) && naPlusDeFrere(P,(int)strlen(chaine)))
+        while(!rechercheTerminee(P) && naPlusDeFrere(P,&elt,(int)strlen(chaine)))
         {
-            remonterAuPere(P,&E);
+            remonterAuPere(P,&elt);
         }
 
         if(!rechercheTerminee(P))
         {
-            passerAuFrereSuivant(P,&E);
+            passerAuFrereSuivant(P,&elt);
         }
     } while(!rechercheTerminee(P));
     
@@ -49,7 +49,7 @@ int pileValide(T_Pile *adrP)
 
 void afficherSol(T_Pile *P, char *chaine)
 {
-	for (int i = 0; i < P->nbElts; i++) printf("%c", chaine[P->Elts[i]]);
+	for (int i = 0; i <= P->nbElts; i++) printf("%c", chaine[P->Elts[i]]);
 	printf(" ");
 }
 
