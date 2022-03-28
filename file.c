@@ -11,7 +11,7 @@ int  retirer(T_File *ptrF,T_Elt *ptrE) //si pas vide, en tete de file
 {
     if(fileVide(ptrF))
     {
-        printf("Attention la file sélectionné est vide \n");
+        printf("Attention la file sélectionnée est vide \n");
         return 0;
     }
     else

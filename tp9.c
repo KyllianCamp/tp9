@@ -119,7 +119,7 @@ switch (chx)
 		printf("\n");
 
 		printf("la hauteur de la pile vaut : %d \n", hauteur(&mapile));
-		printf("La valeur au top vaut : %d \n", sommet(&mapile));
+		// printf("La valeur au top vaut : %d \n", *sommet(&mapile,0));
 
 		printf("Combien d'élement voulez-vous dépiler a cette pile?\n");
 		scanf("%d" , &choix);
@@ -142,7 +142,7 @@ switch (chx)
 		printf("\n");
 		afficherPile(&mapile);
 		printf("\n\n");
-		printf("Le retour de la fonction pileplein est donc : %d \n", pilepleine(&mapile));
+		printf("Le retour de la fonction pileplein est donc : %d \n", pilePleine(&mapile));
 
 		break; 
 	case 3 : 
