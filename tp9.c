@@ -27,8 +27,9 @@ int choix;
 char chaine[20];
 T_Elt valeur = 5;
 T_Elt element;
-// int taille;
-//char chaine[20];
+int taille;
+char aff;
+int graphique;
 
 do
 {
@@ -146,15 +147,31 @@ switch (chx)
 		break; 
 	case 3 : 
 		initPile(&mapile);
+<<<<<<< HEAD
 		printf("Choisissez la chaine de caracère\n");
 		scanf("%s",chaine); //une chaine de longueur <=MAX
 		printf("la chaine fait %d char \n", (int)strlen(chaine));
+=======
+		printf("Choisissez la chaine de caractère\n");
+		scanf("%s",&chaine); //une chaine de longueur <=MAX
+>>>>>>> e0550233704f08a72c9699f2f0401db09f98320d
 		printf("\n Il y a %d permutation : \n\t", factorielle(chaine));
 		permut(&mapile,chaine); //TP9 partie 2: ecrire permut
 		break;
 	case 4 : 
-		// scanf("%d",&taille);//taille echiquier <=MAX
-		// echiquier(&mapile,taille); //TP9 partie 3: ecrire echiquier
+		// printf("\n\n\nVeuillez saisir la taille de l'echiquier : ");
+		// scanf("%d", &taille); //taille echiquier <=MAX
+		// viderBuffer();
+		// printf("\nVoulez vous utiliser l'affichage graphique (Y/n) : ");
+		// scanf("%c", &aff);
+		// viderBuffer();
+		// if (aff == 'Y') {
+		// 	graphique = 1;
+		// 	printf("\nEntrer quelque chose lors de l'affichage pour arreter l'affichage graphique ou faites entree pour continuer");
+		// }
+		// else graphique = 0;
+		// printf("\n\nVoici les solution : \n\t");
+		// printf("\n\n Il y a %d permutation", echiquier(&mapile, taille, graphique)); //TP9 partie 3: ecrire echiquier
 		break;
 	}
 }while(chx!=0);

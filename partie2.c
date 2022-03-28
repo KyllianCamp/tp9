@@ -2,7 +2,7 @@
 
 void permut(T_Pile *P,char *chaine)
 {
-    T_Elt E;
+    T_Elt elt;
     do
     {
         while(pileValide(P)==1)
@@ -12,7 +12,11 @@ void permut(T_Pile *P,char *chaine)
            {
                printf("la hauteur de la pile : %d \n", sommet(P));
                afficherSol(P, chaine);
+<<<<<<< HEAD
                break;
+=======
+			   break;
+>>>>>>> e0550233704f08a72c9699f2f0401db09f98320d
            }
            else
            {
@@ -20,13 +24,17 @@ void permut(T_Pile *P,char *chaine)
                passerAuPremierFils(P,0);
            }
         }
+<<<<<<< HEAD
         while(rechercheTerminee(P)!=1 && naPlusDeFrere(P,(int)strlen(chaine)==1))
+=======
+        while(!rechercheTerminee(P) && naPlusDeFrere(P,&elt,(int)strlen(chaine)))
+>>>>>>> e0550233704f08a72c9699f2f0401db09f98320d
         {
-            remonterAuPere(P,&E);
+            remonterAuPere(P,&elt);
         }
         if(rechercheTerminee(P)!=1)
         {
-            passerAuFrereSuivant(P,&E);
+            passerAuFrereSuivant(P,&elt);
         }
     } while(rechercheTerminee(P)!=1);
 }
@@ -48,6 +56,7 @@ int pileValide(T_Pile *adrP)
 
 void afficherSol(T_Pile *P, char *chaine)
 {
+<<<<<<< HEAD
     int i = 0;
     if (i==0)
     {
@@ -55,6 +64,10 @@ void afficherSol(T_Pile *P, char *chaine)
         printf("\tla hauteur de la chaine vaut %d \n" , hauteur(P));
         printf(" ");
     }
+=======
+	for (int i = 0; i <= P->nbElts; i++) printf("%c", chaine[P->Elts[i]]);
+	printf(" ");
+>>>>>>> e0550233704f08a72c9699f2f0401db09f98320d
 }
 
 int factorielle(const char *chaine) 
