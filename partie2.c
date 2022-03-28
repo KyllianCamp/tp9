@@ -56,18 +56,8 @@ int pileValide(T_Pile *adrP)
 
 void afficherSol(T_Pile *P, char *chaine)
 {
-<<<<<<< HEAD
-    int i = 0;
-    if (i==0)
-    {
-        for (int i = 0; i < P->nbElts; i++) printf("%c", chaine[P->Elts[i]]);
-        printf("\tla hauteur de la chaine vaut %d \n" , hauteur(P));
-        printf(" ");
-    }
-=======
 	for (int i = 0; i <= P->nbElts; i++) printf("%c", chaine[P->Elts[i]]);
 	printf(" ");
->>>>>>> e0550233704f08a72c9699f2f0401db09f98320d
 }
 
 int factorielle(const char *chaine) 

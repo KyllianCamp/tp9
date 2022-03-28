@@ -147,14 +147,9 @@ switch (chx)
 		break; 
 	case 3 : 
 		initPile(&mapile);
-<<<<<<< HEAD
 		printf("Choisissez la chaine de caracère\n");
 		scanf("%s",chaine); //une chaine de longueur <=MAX
 		printf("la chaine fait %d char \n", (int)strlen(chaine));
-=======
-		printf("Choisissez la chaine de caractère\n");
-		scanf("%s",&chaine); //une chaine de longueur <=MAX
->>>>>>> e0550233704f08a72c9699f2f0401db09f98320d
 		printf("\n Il y a %d permutation : \n\t", factorielle(chaine));
 		permut(&mapile,chaine); //TP9 partie 2: ecrire permut
 		break;
