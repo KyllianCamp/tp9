@@ -1,44 +1,43 @@
 #include "partie2.h" 
 
-
-
 void permut(T_Pile *P,char *chaine)
 {
     T_Elt E;
     do
     {
-        while(pileValide(P))
+        while(pileValide(P)==1)
         {
+            // printf(" \nla hauteur de la pile : %d \n", hauteur(P));
            if(noeudTerminal(P,(int)strlen(chaine)))
            {
+               printf("la hauteur de la pile : %d \n", sommet(P));
                afficherSol(P, chaine);
-			break;
+               break;
            }
            else
            {
+            //    printf("\nje passe au premier fils    \t");
                passerAuPremierFils(P,0);
            }
         }
-        while(!rechercheTerminee(P) && naPlusDeFrere(P,(int)strlen(chaine)))
+        while(rechercheTerminee(P)!=1 && naPlusDeFrere(P,(int)strlen(chaine)==1))
         {
             remonterAuPere(P,&E);
         }
-
-        if(!rechercheTerminee(P))
+        if(rechercheTerminee(P)!=1)
         {
             passerAuFrereSuivant(P,&E);
         }
-    } while(!rechercheTerminee(P));
-    
+    } while(rechercheTerminee(P)!=1);
 }
 
 int pileValide(T_Pile *adrP) 
 {
 	int compteur;
-	for (int i = 0; i < adrP->nbElts; i++)
+	for (int i = 0; i <= adrP->nbElts; i++)
     {
 		compteur = 0;
-		for (int j = 0; j < adrP->nbElts; j++) 
+		for (int j = 0; j <= adrP->nbElts; j++) 
         {
 			if (adrP->Elts[j] == adrP->Elts[i]) compteur++;
 			if (compteur > 1) return 0;
@@ -49,8 +48,13 @@ int pileValide(T_Pile *adrP)
 
 void afficherSol(T_Pile *P, char *chaine)
 {
-	for (int i = 0; i < P->nbElts; i++) printf("%c", chaine[P->Elts[i]]);
-	printf(" ");
+    int i = 0;
+    if (i==0)
+    {
+        for (int i = 0; i < P->nbElts; i++) printf("%c", chaine[P->Elts[i]]);
+        printf("\tla hauteur de la chaine vaut %d \n" , hauteur(P));
+        printf(" ");
+    }
 }
 
 int factorielle(const char *chaine) 
@@ -62,80 +66,21 @@ int factorielle(const char *chaine)
     return solution;
 }
 
-// int echiquier(T_Pile *P, int taille, int graphique) {
-// 	T_Elt elt;
-// 	char tmp[20];
-// 	int nb_sol = 0;
-// 	do {
-// 		while (reineValide(P)) {
-// 			if (noeudTerminal(P, taille)) {
-// 				if (graphique) {
-// 					affichageGraphique(P);
-// 					fgets(tmp, 5, stdin);
-// 					if (strlen(tmp) > 1) {
-// 						graphique = 0;
-// 					}
-					
-// 				} else afficherReine(P);
-// 				nb_sol++;
-// 				break;
-// 			} else {
-// 				passerAuPremierFils(P, 0);
-// 			}
-// 		}
-// 		while (!rechercheTerminee(P) && naPlusDeFrere(P, &elt, taille)) {
-// 			remonterAuPere(P, &elt);
-// 		}
-// 		if (!rechercheTerminee(P)) {
-// 			passerAuFrereSuivant(P, &elt);
-// 		}
-// 	} while (!rechercheTerminee(P));
-// 	return nb_sol;
+// int echiquier(T_Pile *P, int taille)
+// {
+//     for (int i = 1; i <= taille; i++)
+//     {
+//         T_Elt element = i;
+//         empiler(P, element);
+
+//     }
+//     afficherPile(P);
 // }
 
-// void afficherReine(T_Pile *P) {
-// 	for (int i = 0; i < P->nbElts; i++) printf("%d", P->Elts[i]);
-// 	printf(" ");
-// }
-
-// void affichageGraphique(T_Pile *P) {
-// 	printf("\n");
-// 	for (int i = 0; i < P->nbElts; i++){
-// 		printf("\t+");
-// 		for (int k = 0; k < P->nbElts; k++) printf("---+");
-// 		printf("\n\t|");
-// 		for (int j = 0; j < P->nbElts; j++) {
-// 			if (P->Elts[i] == j) printf(" x |");
-// 			else printf("   |");
-// 		}
-// 		printf("\n");
-// 	}
-// 	printf("\t+");
-// 	for (int k = 0; k < P->nbElts; k++) printf("---+");
-// 	printf("\n");
-// }
-
-// int reineValide(T_Pile *adrP) {
-// 	return verifColonne(adrP) && verifDiago(adrP);
-// }
-
-// int verifColonne(T_Pile *adrP) {
-// 	int compteur;
-// 	for (int i = 0; i < adrP->nbElts; i++) {
-// 		compteur = 0;
-// 		for (int j = 0; j < adrP->nbElts; j++) {
-// 			if (adrP->Elts[j] == adrP->Elts[i]) compteur++;
-// 			if (compteur > 1) return 0;
-// 		}
-// 	}
-// 	return 1;
-// }
-
-// int verifDiago(T_Pile *adrP) {
-// 	for (int i = 0; i < adrP->nbElts; i++){
-// 		for (int j = 0; j < adrP->nbElts; j++){
-// 			if ((adrP->Elts[i] - abs(i-j) ==  adrP->Elts[j] || adrP->Elts[i] + abs(i-j) ==  adrP->Elts[j]) && i!=j) return 0;
-// 		}
-// 	}
-// 	return 1;
+// int ReineValide(T_Pile *P, int taille)
+// {
+//     if()
+//     {
+        
+//     }
 // }

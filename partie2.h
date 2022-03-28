@@ -13,3 +13,6 @@ void permut(T_Pile *P,char *chaine);
 int pileValide(T_Pile *adrP);
 void afficherSol(T_Pile *P, char *chaine);
 int factorielle(const char *chaine);
+
+// int echiquier(T_Pile *P, int taille);
+// int ReineValide(*P, taille);

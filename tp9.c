@@ -148,6 +148,7 @@ switch (chx)
 		initPile(&mapile);
 		printf("Choisissez la chaine de caracère\n");
 		scanf("%s",chaine); //une chaine de longueur <=MAX
+		printf("la chaine fait %d char \n", (int)strlen(chaine));
 		printf("\n Il y a %d permutation : \n\t", factorielle(chaine));
 		permut(&mapile,chaine); //TP9 partie 2: ecrire permut
 		break;
@@ -155,11 +156,9 @@ switch (chx)
 		// scanf("%d",&taille);//taille echiquier <=MAX
 		// echiquier(&mapile,taille); //TP9 partie 3: ecrire echiquier
 		break;
-
-
-
 	}
 }while(chx!=0);
+
 
 printf("\nAu plaisir de vous revoir ...\n");
 printf("\nCeci est un travail de qualité fourni par M.Nassiri Achrafe et M.Campagne Kyllian !! \n\n");

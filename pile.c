@@ -48,7 +48,7 @@ int depiler( T_Pile *P, T_Elt *pelt)  //renvoie 0 si pile vide, sinon 1
     {
         affecterElt(pelt, &P->Elts[P->nbElts]);
         P->nbElts--;
-        afficherElt(pelt);
+        // afficherElt(pelt);
         return 1;
     }
 return 0;
@@ -65,7 +65,7 @@ T_Elt sommet(const  T_Pile *P)
 
 int hauteur(const  T_Pile *P)
 {
-    return P->nbElts+1;
+    return P->nbElts;
 }
 
 
