@@ -147,28 +147,21 @@ switch (chx)
 		break; 
 	case 3 : 
 		initPile(&mapile);
-		printf("Choisissez la chaine de caractère\n");
-		scanf("%s",&chaine); //une chaine de longueur <=MAX
+		printf("Choisissez la chaine de caracère\n");
+		scanf("%s",chaine); //une chaine de longueur <=MAX
+		printf("la chaine fait %d char \n", (int)strlen(chaine));
 		printf("\n Il y a %d permutation : \n\t", factorielle(chaine));
 		permut(&mapile,chaine); //TP9 partie 2: ecrire permut
 		break;
 	case 4 : 
-		// printf("\n\n\nVeuillez saisir la taille de l'echiquier : ");
-		// scanf("%d", &taille); //taille echiquier <=MAX
-		// viderBuffer();
-		// printf("\nVoulez vous utiliser l'affichage graphique (Y/n) : ");
-		// scanf("%c", &aff);
-		// viderBuffer();
-		// if (aff == 'Y') {
-		// 	graphique = 1;
-		// 	printf("\nEntrer quelque chose lors de l'affichage pour arreter l'affichage graphique ou faites entree pour continuer");
-		// }
-		// else graphique = 0;
-		// printf("\n\nVoici les solution : \n\t");
+		printf("\n\n\nVeuillez saisir la taille de l'echiquier : ");
+		scanf("%d", &taille); //taille echiquier <=MAX
+		printf("\n\nVoici les solution : \n\t");
 		// printf("\n\n Il y a %d permutation", echiquier(&mapile, taille, graphique)); //TP9 partie 3: ecrire echiquier
 		break;
 	}
 }while(chx!=0);
+
 
 printf("\nAu plaisir de vous revoir ...\n");
 printf("\nCeci est un travail de qualité fourni par M.Nassiri Achrafe et M.Campagne Kyllian !! \n\n");

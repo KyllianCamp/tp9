@@ -1,14 +1,13 @@
 #include "partie2.h" 
 
-
-
 void permut(T_Pile *P,char *chaine)
 {
     T_Elt elt;
     do
     {
-        while(pileValide(P))
+        while(pileValide(P)==1)
         {
+            // printf(" \nla hauteur de la pile : %d \n", hauteur(P));
            if(noeudTerminal(P,(int)strlen(chaine)))
            {
                printf("-- ");
@@ -18,6 +17,7 @@ void permut(T_Pile *P,char *chaine)
            }
            else
            {
+            //    printf("\nje passe au premier fils    \t");
                passerAuPremierFils(P,0);
            }
         }
@@ -25,22 +25,20 @@ void permut(T_Pile *P,char *chaine)
         {
             remonterAuPere(P,&elt);
         }
-
-        if(!rechercheTerminee(P))
+        if(rechercheTerminee(P)!=1)
         {
             passerAuFrereSuivant(P,&elt);
         }
-    } while(!rechercheTerminee(P));
-    
+    } while(rechercheTerminee(P)!=1);
 }
 
 int pileValide(T_Pile *adrP) 
 {
 	int compteur;
-	for (int i = 0; i < adrP->nbElts; i++)
+	for (int i = 0; i <= adrP->nbElts; i++)
     {
 		compteur = 0;
-		for (int j = 0; j < adrP->nbElts; j++) 
+		for (int j = 0; j <= adrP->nbElts; j++) 
         {
 			if (adrP->Elts[j] == adrP->Elts[i]) compteur++;
 			if (compteur > 1) return 0;
