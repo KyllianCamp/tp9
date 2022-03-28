@@ -12,11 +12,7 @@ void permut(T_Pile *P,char *chaine)
            {
                printf("la hauteur de la pile : %d \n", sommet(P));
                afficherSol(P, chaine);
-<<<<<<< HEAD
-               break;
-=======
 			   break;
->>>>>>> e0550233704f08a72c9699f2f0401db09f98320d
            }
            else
            {
@@ -24,11 +20,7 @@ void permut(T_Pile *P,char *chaine)
                passerAuPremierFils(P,0);
            }
         }
-<<<<<<< HEAD
-        while(rechercheTerminee(P)!=1 && naPlusDeFrere(P,(int)strlen(chaine)==1))
-=======
         while(!rechercheTerminee(P) && naPlusDeFrere(P,&elt,(int)strlen(chaine)))
->>>>>>> e0550233704f08a72c9699f2f0401db09f98320d
         {
             remonterAuPere(P,&elt);
         }
