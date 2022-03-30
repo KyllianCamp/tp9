@@ -102,7 +102,7 @@ switch (chx)
 		// testFile(&mafile); //TP9 partie 1 : à ecrire 
 		initPile(&mapile);
 		printf("Le nombre d'élément dans la pile est : \n");
-		printf("%d \n ", mapile.nbElts+1);
+		printf("%d \n ", mapile.nbElts);
 		afficherPile(&mapile);
 
 		printf("Combien d'élement voulez-vous ajouter a cette pile?\n");
