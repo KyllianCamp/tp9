@@ -5,7 +5,7 @@ void permut(T_Pile *P,char *chaine)
     T_Elt elt;
     do
     {
-        while(pileValide(P)==1)
+        while(pileValide(P))
         {
             // printf(" \nla hauteur de la pile : %d \n", hauteur(P));
            if(noeudTerminal(P,(int)strlen(chaine)))
@@ -35,10 +35,10 @@ void permut(T_Pile *P,char *chaine)
 int pileValide(T_Pile *adrP) 
 {
 	int compteur;
-	for (int i = 0; i <= adrP->nbElts; i++)
+	for (int i = 0; i < adrP->nbElts; i++)
     {
 		compteur = 0;
-		for (int j = 0; j <= adrP->nbElts; j++) 
+		for (int j = 0; j < adrP->nbElts; j++) 
         {
 			if (adrP->Elts[j] == adrP->Elts[i]) compteur++;
 			if (compteur > 1) return 0;
