@@ -102,7 +102,7 @@ switch (chx)
 		// testFile(&mafile); //TP9 partie 1 : à ecrire 
 		initPile(&mapile);
 		printf("Le nombre d'élément dans la pile est : \n");
-		printf("%d \n ", mapile.nbElts+1);
+		printf("%d \n ", mapile.nbElts);
 		afficherPile(&mapile);
 
 		printf("Combien d'élement voulez-vous ajouter a cette pile?\n");
@@ -147,9 +147,14 @@ switch (chx)
 		break; 
 	case 3 : 
 		initPile(&mapile);
+<<<<<<< HEAD
 		printf("Choisissez la chaine de caracère\n");
 		scanf("%s",chaine); //une chaine de longueur <=MAX
 		printf("la chaine fait %d char \n", (int)strlen(chaine));
+=======
+		printf("Choisissez la chaine de caractère\n");
+		scanf("%s",&chaine); //une chaine de longueur <=MAX
+>>>>>>> 92d2febb3aa414424f623a6a601a53e6a3218c04
 		printf("\n Il y a %d permutation : \n", factorielle(chaine));
 		permut(&mapile,chaine); //TP9 partie 2: ecrire permut
 		break;
